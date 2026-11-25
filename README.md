@@ -15,5 +15,16 @@ A detection-engineered Sysmon configuration designed to capture high-fidelity Wi
 
 ## Quick Install
 Run from an elevated PowerShell prompt:
-```powershell
-.\Sysmon64.exe -accepteula -i sysmonconfig-improved.xml
+
+    .\Sysmon64.exe -accepteula -i sysmonconfig-improved.xml
+
+### Updating Configuration
+To update an existing installation without rebooting:
+
+    .\Sysmon64.exe -c sysmonconfig-improved.xml
+
+## Tuning
+Review the `exclude` rule groups for Event IDs `1`, `3`, `11`, and `22` to add environment-specific exclusions for your EDR, backup agents, and internal administrative tools.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
